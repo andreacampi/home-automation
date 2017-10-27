@@ -1,0 +1,84 @@
+default_view:
+  view: yes
+  icon: mdi:home 
+  entities:
+    - group.downstairs
+    - group.upstairs
+    - group.climate
+
+#
+# Upstairs
+#
+upstairs:
+  name: Upstairs
+  icon: mdi:hotel
+  entities:
+    - group.bedroom
+    - group.kids_bedroom
+    - group.stairs_top
+
+bedroom:
+  name: Bedroom
+  icon: mdi:human-male-female
+  entities:
+    - light.bedroom_2
+    - light.andrea
+    - light.marta
+
+kids_bedroom:
+  name: Kids Bedroom
+  icon: mdi:human-child
+  entities:
+    - light.kids_bedroom
+
+stairs_top:
+  name: Stairs top
+  icon: mdi:stairs
+  entities:
+    - light.stairs_top
+
+#
+# Downstairs
+#
+downstairs:
+  name: Downstairs
+  icon: mdi:television
+  entities:
+    - group.kitchen
+    - group.living_room
+    - group.stairs_bottom
+
+kitchen:
+  name: Kitchen
+  icon: mdi:food
+  entities:
+    - light.kitchen_spot_1
+    - light.kitchen_spot_2
+    - light.kitchen_spot_3
+    - light.kitchen_spot_4
+    - light.kitchen_spot_5
+    - light.kitchen_spot_6
+
+living_room:
+  name: Living room
+  icon: mdi:television
+  entities:
+    - light.living_room_2
+
+stairs_bottom:
+  name: Stairs bottom
+  icon: mdi:stairs
+  entities:
+    - light.stairs_bottom
+
+#
+# Climate
+#
+climate:
+  name: Climate
+  view: no
+  entities:
+    - climate.hallway
+    - sensor.hallway_thermostat_humidity
+    - sensor.yr_symbol
+    - sun.sun

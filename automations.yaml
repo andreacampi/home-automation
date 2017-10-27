@@ -1,0 +1,30 @@
+- alias: Turn on the lights when the sun sets
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-01:00:00"
+  condition:
+    condition: state
+    entity_id: group.all_devices
+    state: 'home'
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.living_room_2
+
+- alias: Morning routine
+  trigger:
+    platform: time
+    at: '07:00:00'
+
+  condition:
+    condition: state
+    entity_id: group.all_devices
+    state: home
+
+  action:
+    service: light.turn_on
+    entity_id: light.andrea
+    data:
+      brightness_pct: 30
+      xy_color: 0.4575,0.4099
+      transition: 900
