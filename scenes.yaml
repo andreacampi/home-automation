@@ -1,0 +1,13 @@
+- name: Wakeup
+  entities:
+    light.andrea:
+      state: on
+      xy_color: [0.4575,0.4099]
+      brightness_pct: 30
+      transition: 900
+    light.stairs:
+      state: on
+      brightness: 77
+    light.kitchen:
+      state: on
+      brightness: 77
