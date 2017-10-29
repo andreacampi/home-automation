@@ -1,0 +1,2 @@
+# dothomeassistant
+My .homeassistant
