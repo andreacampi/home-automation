@@ -8,7 +8,7 @@
     entity_id: group.all_devices
     state: 'home'
   action:
-    service: homeassistant.turn_on
+    service: light.turn_on
     entity_id: light.living_room_2
 
 - alias: Morning routine
@@ -26,5 +26,5 @@
     entity_id: light.andrea
     data:
       brightness_pct: 30
-      xy_color: 0.4575,0.4099
+      xy_color: [0.4575,0.4099]
       transition: 900
