@@ -5,6 +5,8 @@ default_view:
     - group.downstairs
     - group.upstairs
     - group.climate
+    - group.scenes
+    - group.automation
 
 #
 # Upstairs
@@ -82,3 +84,19 @@ climate:
     - sensor.hallway_thermostat_humidity
     - sensor.yr_symbol
     - sun.sun
+
+#
+# Scenes
+#
+scenes:
+  name: Scenes
+  entities:
+    - scene.wakeup
+
+#
+# Automation
+#
+automation:
+  name: Automation
+  entities:
+    - automation.morning_routine
