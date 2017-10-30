@@ -15,7 +15,7 @@
     service: scene.turn_on
     entity_id: scene.sunrise
 
-- alias: Morning routine
+- alias: Wakeup
   trigger:
     platform: time
     at: '07:00:00'
@@ -28,3 +28,19 @@
   action:
     service: scene.turn_on
     entity_id: scene.wakeup
+
+- alias: Get dressed
+  trigger:
+    platform: time
+    at: '07:30:00'
+
+  condition:
+    condition: state
+    entity_id: group.all_devices
+    state: home
+
+  action:
+    service: light.turn_on
+    entity_id: light.kids_bedroom_2
+    data:
+      brightness: 77

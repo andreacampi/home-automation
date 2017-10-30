@@ -101,4 +101,5 @@ automation:
   name: Automation
   entities:
     - automation.sunrise
-    - automation.morning_routine
+    - automation.wakeup
+    - automation.get_dressed
