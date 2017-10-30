@@ -12,12 +12,8 @@
     state: home
 
   action:
-    service: light.turn_on
-    entity_id: light.andrea
-    data:
-      brightness_pct: 30
-      xy_color: [0.4575,0.4099]
-      transition: 900
+    service: scene.turn_on
+    entity_id: scene.sunrise
 
 - alias: Morning routine
   trigger:

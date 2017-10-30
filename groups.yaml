@@ -91,6 +91,7 @@ climate:
 scenes:
   name: Scenes
   entities:
+    - scene.sunrise
     - scene.wakeup
 
 #
@@ -99,4 +100,5 @@ scenes:
 automation:
   name: Automation
   entities:
+    - automation.sunrise
     - automation.morning_routine
