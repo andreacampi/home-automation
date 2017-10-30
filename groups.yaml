@@ -23,7 +23,7 @@ bedroom:
   name: Bedroom
   icon: mdi:human-male-female
   entities:
-    - light.bedroom_2
+    - light.bedroom
     - light.andrea
     - light.marta
 
