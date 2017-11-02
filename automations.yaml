@@ -44,3 +44,16 @@
     entity_id: light.kids_bedroom_2
     data:
       brightness: 77
+
+#
+# Afternoon
+#
+- alias: Sunset
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: "{{ state.attributes.elevation }}"
+    below: 5.0
+  action:
+    service: scene.turn_on
+    entity_id: scene.sunset

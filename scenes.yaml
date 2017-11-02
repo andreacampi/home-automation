@@ -28,3 +28,20 @@
     light.kitchen:
       state: on
       brightness: 77
+
+- name: Sunset
+  entities:
+    light.living_room:
+      state: on
+      color_temp: 400
+      brightness_pct: 60
+      transition: 900
+    light.stairs_bottom:
+      state: on
+      brightness_pct: 30
+    light.stairs_top:
+      state: on
+      brightness_pct: 30
+    light.kitchen:
+      state: on
+      brightness_pct: 30

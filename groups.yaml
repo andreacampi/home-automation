@@ -93,6 +93,7 @@ scenes:
   entities:
     - scene.sunrise
     - scene.wakeup
+    - scene.sunset
 
 #
 # Automation
@@ -103,3 +104,4 @@ automation:
     - automation.sunrise
     - automation.wakeup
     - automation.get_dressed
+    - automation.sunset
