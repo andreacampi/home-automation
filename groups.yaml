@@ -78,7 +78,6 @@ stairs_bottom:
 #
 climate:
   name: Climate
-  view: no
   entities:
     - climate.hallway
     - sensor.hallway_thermostat_humidity
