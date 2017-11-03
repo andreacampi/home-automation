@@ -2,6 +2,7 @@
 .HA_VERSION
 .ios.conf
 .uuid
+__pycache__
 deps
 home-assistant.log
 home-assistant_v2.db*

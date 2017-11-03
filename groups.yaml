@@ -7,6 +7,7 @@ default_view:
     - group.climate
     - group.scenes
     - group.automation
+    - group.alarm_clock
 
 #
 # Upstairs
@@ -104,3 +105,12 @@ automation:
     - automation.wakeup
     - automation.get_dressed
     - automation.sunset
+
+#
+# Alarm clock
+#
+alarm_clock:
+  name: Morning Alarm & Wakeup
+  entities:
+    - input_boolean.alarm_clock
+    - input_select.wake_up_time

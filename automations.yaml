@@ -1,34 +1,6 @@
 #
 # Morning
 #
-- alias: Sunrise
-  trigger:
-    platform: time
-    at: '06:45:00'
-
-  condition:
-    condition: state
-    entity_id: group.all_devices
-    state: home
-
-  action:
-    service: scene.turn_on
-    entity_id: scene.sunrise
-
-- alias: Wakeup
-  trigger:
-    platform: time
-    at: '07:00:00'
-
-  condition:
-    condition: state
-    entity_id: group.all_devices
-    state: home
-
-  action:
-    service: scene.turn_on
-    entity_id: scene.wakeup
-
 - alias: Get dressed
   trigger:
     platform: time

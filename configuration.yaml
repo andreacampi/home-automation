@@ -71,7 +71,18 @@ nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
 
-group: !include groups.yaml
 automation: !include automations.yaml
+group: !include groups.yaml
+input_boolean: !include input_boolean.yaml
+input_select: !include input_select.yaml
 scene: !include scenes.yaml
+# sensor: !include_dir_merge_list sensors
 script: !include scripts.yaml
+
+alarm_clock:
+  time: input_select.wake_up_time
+  master_control: input_boolean.alarm_clock
+  entity_id: scene.wakeup
+  additional:
+    time: -900
+    entity_id: scene.sunrise
