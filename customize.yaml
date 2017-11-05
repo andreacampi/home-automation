@@ -1,0 +1,7 @@
+#
+# Change icons
+#
+light.stairs_bottom:
+  icon: mdi:stairs
+light.stairs_top:
+  icon: mdi:stairs

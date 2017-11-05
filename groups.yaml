@@ -18,7 +18,7 @@ upstairs:
   entities:
     - group.bedroom
     - group.kids_bedroom
-    - group.stairs_top
+    - light.stairs_top
 
 bedroom:
   name: Bedroom
@@ -34,12 +34,6 @@ kids_bedroom:
   entities:
     - light.kids_bedroom
 
-stairs_top:
-  name: Stairs top
-  icon: mdi:stairs
-  entities:
-    - light.stairs_top
-
 #
 # Downstairs
 #
@@ -49,7 +43,7 @@ downstairs:
   entities:
     - group.kitchen
     - group.living_room
-    - group.stairs_bottom
+    - light.stairs_bottom
 
 kitchen:
   name: Kitchen
@@ -67,12 +61,6 @@ living_room:
   icon: mdi:television
   entities:
     - light.living_room_2
-
-stairs_bottom:
-  name: Stairs bottom
-  icon: mdi:stairs
-  entities:
-    - light.stairs_bottom
 
 #
 # Climate
