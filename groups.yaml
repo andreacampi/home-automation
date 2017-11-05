@@ -130,10 +130,17 @@ devices:
   view: yes
   icon: mdi:cellphone-link
   entities:
-    - device_tracker.andrea
+    - group.devices_view
+
+devices_view:
+  name: Devices
+  entities:
+    - group.all_devices
+    - device_tracker.andrea_5f5bc153966f47ef8ebc147bf40d76a2
     - sensor.andrea_battery_level
     - sensor.andrea_battery_state
-    - sensor.marta_battery_level
-    - sensor.marta_battery_state
+    - device_tracker.marta_2f6f9326c3df4948aefa4059e7471cfd
+    - sensor.martas_iphone_battery_level
+    - sensor.martas_iphone_battery_state
     - sensor.andreas_ipad_battery_level
     - sensor.andreas_ipad_battery_state

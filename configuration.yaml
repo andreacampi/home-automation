@@ -62,7 +62,6 @@ tts:
   - platform: google
 
 ios:
-  track_ios: true
 
 light:
   - platform: hue
@@ -88,6 +87,11 @@ alarm_clock:
     time: -900
     entity_id: scene.sunrise
 
+mqtt:
+  broker: core-mosquitto
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
 logger:
   default: warning
   logs:
@@ -98,3 +102,8 @@ logger:
     # Very noisy
     homeassistant.core: warning
     homeassistant.components.http: warning
+
+device_tracker:
+  - platform: owntracks
+    max_gps_accuracy: 200
+    waypoints: True

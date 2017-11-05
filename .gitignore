@@ -6,7 +6,6 @@ __pycache__
 deps
 home-assistant.log
 home-assistant_v2.db*
-known_devices.yaml
 nest.conf
 phue.conf
 secrets.yaml
