@@ -24,7 +24,7 @@ bedroom:
   name: Bedroom
   icon: mdi:human-male-female
   entities:
-    - light.bedroom_2
+    - light.bedroom
     - light.andrea
     - light.marta
 
@@ -32,7 +32,7 @@ kids_bedroom:
   name: Kids Bedroom
   icon: mdi:human-child
   entities:
-    - light.kids_bedroom
+    - light.kids_bedroom_2
 
 #
 # Downstairs
@@ -60,7 +60,7 @@ living_room:
   name: Living room
   icon: mdi:television
   entities:
-    - light.living_room_2
+    - light.living_room
 
 #
 # Climate
