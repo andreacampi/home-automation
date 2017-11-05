@@ -121,3 +121,19 @@ alarm_clock:
   entities:
     - input_boolean.alarm_clock
     - input_select.wake_up_time
+
+#
+# Devices
+#
+devices:
+  name: Devices
+  view: yes
+  icon: mdi:cellphone-link
+  entities:
+    - device_tracker.andrea
+    - sensor.andrea_battery_level
+    - sensor.andrea_battery_state
+    - sensor.marta_battery_level
+    - sensor.marta_battery_state
+    - sensor.andreas_ipad_battery_level
+    - sensor.andreas_ipad_battery_state
