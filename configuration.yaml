@@ -87,3 +87,14 @@ alarm_clock:
   additional:
     time: -900
     entity_id: scene.sunrise
+
+logger:
+  default: warning
+  logs:
+    # Useful information e.g. during boot
+    homeassistant.loader: info
+    homeassistant.setup: info
+
+    # Very noisy
+    homeassistant.core: warning
+    homeassistant.components.http: warning
