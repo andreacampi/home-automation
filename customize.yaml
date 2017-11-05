@@ -1,4 +1,26 @@
 #
+# Hide Hue groups
+#
+light.bedroom_2:
+  hidden: true
+light.kids_bedroom_2:
+  hidden: true
+light.kitchen:
+  hidden: true
+light.living_room:
+  hidden: true
+light.stairs:
+  hidden: true
+
+#
+# Assign lights friendly names that don't conflict with group names
+#
+light.bedroom:
+  friendly_name: Bedroom celing
+light.living_room_2:
+  friendly_name: Living room ceiling
+
+#
 # Change icons
 #
 light.stairs_bottom:
