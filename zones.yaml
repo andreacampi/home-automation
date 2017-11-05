@@ -1,0 +1,15 @@
+- name: home
+  hidden: false
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  radius: 100
+  friendly_name: Home
+  icon: mdi:home
+
+- name: work_andrea
+  hidden: true
+  latitude: !secret zone_work_andrea_latitude
+  longitude: !secret zone_work_andrea_longitude
+  radius: 250
+  friendly_name: !secret zone_work_andrea_friendly_name
+  icon: mdi:worker

@@ -78,6 +78,7 @@ input_select: !include input_select.yaml
 scene: !include scenes.yaml
 # sensor: !include_dir_merge_list sensors
 script: !include scripts.yaml
+zone: !include zones.yaml
 
 alarm_clock:
   time: input_select.wake_up_time
