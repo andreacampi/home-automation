@@ -7,7 +7,6 @@
   icon: mdi:home
 
 - name: work_andrea
-  hidden: true
   latitude: !secret zone_work_andrea_latitude
   longitude: !secret zone_work_andrea_longitude
   radius: 250
