@@ -78,6 +78,8 @@ logbook:
   exclude:
     entities:
       # All of these change too often
+      - group.downstairs
+      - group.upstairs
       - light.stairs_bottom
       - light.stairs_top
       - sensor.yr_symbol
