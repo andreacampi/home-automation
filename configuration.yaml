@@ -70,6 +70,8 @@ logbook:
   exclude:
     entities:
       # All of these change too often
+      - light.all_hue_lights
+      - group.all_lights
       - group.downstairs
       - group.upstairs
       - light.stairs_bottom
