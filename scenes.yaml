@@ -10,11 +10,6 @@
       xy_color: [0.6014,0.3789]
       brightness_pct: 30
       transition: 900
-    light.bedroom_2:
-      state: on
-      xy_color: [0.3582,0.2875]
-      brightness_pct: 30
-      transition: 900
 
 - name: Wakeup
   entities:
