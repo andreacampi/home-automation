@@ -139,6 +139,3 @@ device_tracker:
   - platform: owntracks
     max_gps_accuracy: 200
     waypoints: True
-
-media_player:
-  - platform: firetv
