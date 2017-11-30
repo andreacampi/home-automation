@@ -16,4 +16,4 @@ for f in ${files}
 do
 	scp root@hassio.local:/config/$f .
 done
-scp -pr root@hassio.local:/config/custom_components custom_components
+scp -pr root@hassio.local:/config/custom_components/* custom_components/
