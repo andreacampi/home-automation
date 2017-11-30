@@ -12,19 +12,7 @@ homeassistant:
   time_zone: Europe/London
   # Customization file
   customize: !include customize.yaml
-
-# Enables the frontend
-frontend:
-
-# Enables configuration UI
-config:
-
-http:
-  base_url: !secret http_base_url
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
-  # Secrets are defined in the file secrets.yaml
-  api_password: !secret http_password
+  packages: !include_dir_named packages
 
 # Checks for available updates
 # Note: This component will send some information about your system to
@@ -38,69 +26,10 @@ updater:
 # Discover some devices automatically
 discovery:
 
-# Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
-
-# Enables support for tracking state changes over time
-recorder:
-  db_url: !secret recorder_db_url
-  purge_interval: 2
-  purge_keep_days: 5
-  exclude:
-    domains:
-      - automation
-      - updater
-
-history:
-  exclude:
-    domains:
-      - automation
-    entities:
-      # We are using heating only
-      - binary_sensor.hallway_thermostat_fan
-
-      # These are not something we would track the state of
-      - group.alarm_clock
-      - group.automation
-      - group.climate
-      - group.scenes
-
-# View all events in a logbook
-logbook:
-  exclude:
-    entities:
-      # All of these change too often
-      - light.all_hue_lights
-      - group.all_lights
-      - group.downstairs
-      - group.upstairs
-      - light.stairs_bottom
-      - light.stairs_top
-      - sensor.yr_symbol
-
-# Enables a map showing the location of tracked devices
-map:
-
-# Track the sun
-sun:
-
-# Weather prediction
-sensor:
-  - platform: yr
-
-# Text to speech
-tts:
-  - platform: google
+# Enables the frontend
+frontend:
 
 ios:
-
-light:
-  - platform: hue
-    host: 192.168.0.40
-
-nest:
-  client_id: !secret nest_client_id
-  client_secret: !secret nest_client_secret
 
 automation: !include automations.yaml
 group: !include groups.yaml
@@ -110,19 +39,6 @@ scene: !include scenes.yaml
 # sensor: !include_dir_merge_list sensors
 script: !include scripts.yaml
 zone: !include zones.yaml
-
-alarm_clock:
-  time: input_select.wake_up_time
-  master_control: input_boolean.alarm_clock
-  entity_id: scene.wakeup
-  additional:
-    time: -900
-    entity_id: scene.sunrise
-
-mqtt:
-  broker: core-mosquitto
-  username: !secret mqtt_username
-  password: !secret mqtt_password
 
 logger:
   default: warning
@@ -135,10 +51,13 @@ logger:
     homeassistant.core: warning
     homeassistant.components.http: warning
 
-device_tracker:
-  - platform: owntracks
-    max_gps_accuracy: 200
-    waypoints: True
+light:
+  - platform: hue
+    host: 192.168.0.40
+
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
 
 switch:
   - platform: tplink

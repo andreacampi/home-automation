@@ -1,0 +1,6 @@
+# Track the sun
+sun:
+
+# Weather prediction
+sensor:
+  - platform: yr
