@@ -13,7 +13,7 @@
 
   action:
     service: light.turn_on
-    entity_id: light.kids_bedroom_2
+    entity_id: light.kids_bedroom_ceiling
     data:
       brightness: 77
 
