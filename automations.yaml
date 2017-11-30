@@ -25,7 +25,7 @@
     platform: numeric_state
     entity_id: sun.sun
     value_template: "{{ state.attributes.elevation }}"
-    below: 5.0
+    below: 2.5
 
   condition:
     condition: and
