@@ -5,6 +5,7 @@ set -euo pipefail
 files='.ios.conf automations.yaml configuration.yaml customize.yaml groups.yaml
 input_boolean.yaml input_select.yaml known_devices.yaml scenes.yaml 
 scripts.yaml secrets.yaml zones.yaml'
+dirs='custom_components packages'
 
 clean=$(git status -s | wc -l)
 if [ $clean -gt 0 ]; then
@@ -16,4 +17,9 @@ for f in ${files}
 do
 	scp root@hassio.local:/config/$f .
 done
-scp -pr root@hassio.local:/config/custom_components/* custom_components/
+
+for d in ${dirs}
+do
+    [ -d $d ] || mkdir $d
+    scp -pr root@hassio.local:/config/${d}/* ${d}/
+done
