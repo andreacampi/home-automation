@@ -7,9 +7,14 @@
     at: '07:30:00'
 
   condition:
-    condition: state
-    entity_id: group.all_devices
-    state: home
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: 'group.all_devices'
+        state: 'home'
+      - condition: state
+        entity_id: 'binary_sensor.workday_sensor'
+        state: 'on'
 
   action:
     service: light.turn_on

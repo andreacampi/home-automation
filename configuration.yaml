@@ -62,3 +62,7 @@ nest:
 switch:
   - platform: tplink
     host: 192.168.0.45
+
+binary_sensor:
+  - platform: workday
+    country: UK
