@@ -1,7 +1,8 @@
 #
 # Morning
 #
-- alias: Get dressed
+- id: get_dressed
+  alias: Get dressed
   trigger:
     platform: time
     at: '07:30:00'
@@ -25,7 +26,8 @@
 #
 # Afternoon
 #
-- alias: Sunset
+- id: sunset
+  alias: Sunset
   trigger:
     platform: numeric_state
     entity_id: sun.sun
@@ -48,7 +50,8 @@
 #
 #
 #
-- alias: 'Update Available Notifications'
+- id: notify_updates_available
+  alias: 'Update Available Notifications'
   trigger:
     platform: state
     entity_id: updater.updater
