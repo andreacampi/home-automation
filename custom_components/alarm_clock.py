@@ -150,7 +150,7 @@ class AlarmClock(object):
       else:
         _LOGGER.info('Disabling alarms')
         self._clear_alarms()
-    
+
   def _create_alarms(self):
     '''
     Create alarms with the specified times and enables the event listeners.
