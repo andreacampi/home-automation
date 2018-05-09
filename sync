@@ -15,11 +15,11 @@ fi
 
 for f in ${files}
 do
-	scp root@hassio.local:/config/$f .
+	scp root@192.168.30.19:/config/$f .
 done
 
 for d in ${dirs}
 do
     [ -d $d ] || mkdir $d
-    scp -pr root@hassio.local:/config/${d}/* ${d}/
+    scp -pr root@192.168.30.19:/config/${d}/* ${d}/
 done
