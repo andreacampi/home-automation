@@ -2,10 +2,11 @@
 
 set -euo pipefail
 
-files='.ios.conf automations.yaml configuration.yaml customize.yaml groups.yaml
-input_boolean.yaml input_select.yaml known_devices.yaml scenes.yaml 
+files='.config_entries.json .HA_VERSION .ios.conf .uuid automations.yaml
+configuration.yaml customize.yaml entity_registry.yaml groups.yaml
+input_boolean.yaml input_select.yaml known_devices.yaml nest.conf scenes.yaml
 scripts.yaml secrets.yaml zones.yaml'
-dirs='custom_components packages'
+dirs='.cloud custom_components packages tts'
 
 clean=$(git status -s | wc -l)
 if [ $clean -gt 0 ]; then
