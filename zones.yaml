@@ -9,6 +9,6 @@
 - name: work_andrea
   latitude: !secret zone_work_andrea_latitude
   longitude: !secret zone_work_andrea_longitude
-  radius: 250
+  radius: 100
   friendly_name: !secret zone_work_andrea_friendly_name
   icon: mdi:worker
