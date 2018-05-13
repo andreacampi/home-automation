@@ -4,6 +4,8 @@ default_view:
   entities:
     - group.bedroom
     - group.kids_bedroom
+    - group.kitchen
+    - group.living_room
     - group.climate
     - group.scenes
     - group.automation
@@ -46,6 +48,32 @@ kids_bedroom_ceiling:
     - light.kids_near_window
     - light.kids_near_davide
     - light.kids_near_door
+
+#
+# Kitchen
+#
+kitchen:
+  name: Kitchen
+  icon: mdi:fridge
+  entities:
+    - light.kitchen_door
+    - light.kitchen_hob
+    - light.kitchen_sink
+    - light.kitchen_fridge
+
+
+
+#
+# Living room
+#
+living_room:
+  name: Living room
+  icon: mdi:television
+  entities:
+    - light.living_room_window
+    - light.living_room_sofa
+    - light.living_room_door
+    - light.living_room_terrace
 
 #
 # Climate
