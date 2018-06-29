@@ -2,8 +2,9 @@
 
 set -euo pipefail
 
-files='.ios.conf automations.yaml configuration.yaml customize.yaml groups.yaml
-input_boolean.yaml input_select.yaml known_devices.yaml scenes.yaml 
+files='.config_entries.json .HA_VERSION .ios.conf .uuid automations.yaml
+configuration.yaml customize.yaml entity_registry.yaml groups.yaml
+input_boolean.yaml input_select.yaml known_devices.yaml nest.conf scenes.yaml
 scripts.yaml secrets.yaml zones.yaml'
 dirs='custom_components packages'
 
@@ -15,11 +16,11 @@ fi
 
 for f in ${files}
 do
-	scp root@hassio.local:/config/$f .
+	scp root@192.168.30.19:/config/$f .
 done
 
 for d in ${dirs}
 do
     [ -d $d ] || mkdir $d
-    scp -pr root@hassio.local:/config/${d}/* ${d}/
+    scp -pr root@192.168.30.19:/config/${d}/* ${d}/
 done

@@ -2,7 +2,7 @@
 recorder:
   db_url: !secret recorder_db_url
   purge_interval: 2
-  purge_keep_days: 5
+  purge_keep_days: 90
   exclude:
     domains:
       - automation
@@ -29,8 +29,4 @@ logbook:
       # All of these change too often
       - light.all_hue_lights
       - group.all_lights
-      - group.downstairs
-      - group.upstairs
-      - light.stairs_bottom
-      - light.stairs_top
       - sensor.yr_symbol

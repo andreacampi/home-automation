@@ -53,15 +53,7 @@ logger:
 
 light:
   - platform: hue
-    host: 192.168.0.40
-
-nest:
-  client_id: !secret nest_client_id
-  client_secret: !secret nest_client_secret
-
-switch:
-  - platform: tplink
-    host: 192.168.0.45
+    host: 192.168.30.14
 
 binary_sensor:
   - platform: workday
