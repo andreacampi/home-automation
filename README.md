@@ -10,3 +10,5 @@ This repo contains configurations and other bits for my home automation setup.
   * installed [directly](https://gist.github.com/ajumalp/0ad2517d15c999cfc440cdf3d623fab8). TODO move to Docker
 * [Home Assistant](https://www.home-assistant.io) configuration files in the homeassistant subdirectory:
   * currently out of order, config may or may not be broken
+* Prometheus / Grafana stack in the homeassistant subdirectory:
+  * installed via [synology-prometheus](https://github.com/prahaladramji/synology-prometheus)
