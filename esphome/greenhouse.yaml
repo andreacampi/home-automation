@@ -1,0 +1,84 @@
+esphome:
+  name: greenhouse
+  platform: ESP32
+  board: pico32
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Greenhouse Fallback Hotspot"
+    password: !secret wifi_ap_password
+
+captive_portal:
+
+# Enable logging
+logger:
+  logs:
+    esp32_ble_tracker: info
+    sensor: info
+    xiaomi_ble: info
+
+# Enable Home Assistant API
+#api:
+#  password: !secret api_password
+
+ota:
+  password: !secret ota_password
+
+mqtt:
+  broker: !secret mqtt_broker
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
+# Activates prometheus /metrics endpoint
+prometheus:
+
+esp32_ble_tracker:
+
+sensor:
+  - platform: xiaomi_hhccjcy01
+    mac_address: 'C4:7C:8D:6A:B2:76'
+    temperature:
+      name: "Palm - Temperature"
+    moisture:
+      name: "Palm - Moisture"
+    illuminance:
+      name: "Palm - Illuminance"
+    conductivity:
+      name: "Palm - Soil Conductivity"
+
+  - platform: xiaomi_hhccjcy01
+    mac_address: 'C4:7C:8D:6A:B3:CF'
+    temperature:
+      name: "Cactus - Temperature"
+    moisture:
+      name: "Cactus - Moisture"
+    illuminance:
+      name: "Cactus - Illuminance"
+    conductivity:
+      name: "Cactus - Soil Conductivity"
+
+  - platform: xiaomi_hhccjcy01
+    mac_address: 'C4:7C:8D:6A:A8:58'
+    temperature:
+      name: "Basil - Temperature"
+    moisture:
+      name: "Basil - Moisture"
+    illuminance:
+      name: "Basil - Illuminance"
+    conductivity:
+      name: "Basil - Soil Conductivity"
+
+  - platform: xiaomi_hhccjcy01
+    mac_address: 'C4:7C:8D:6A:4C:BF'
+    temperature:
+      name: "Geranium - Temperature"
+    moisture:
+      name: "Geranium - Moisture"
+    illuminance:
+      name: "Geranium - Illuminance"
+    conductivity:
+      name: "Geranium - Soil Conductivity"
