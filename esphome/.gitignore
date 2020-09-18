@@ -1,0 +1,7 @@
+**/.pioenvs/
+**/.piolibdeps/
+**/lib/
+**/partitions.csv
+**/platformio.ini
+**/src/
+/.esphome/
