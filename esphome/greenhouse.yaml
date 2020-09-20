@@ -2,6 +2,30 @@ esphome:
   name: greenhouse
   platform: ESP32
   board: pico32
+  on_boot:
+    then:
+      - light.turn_on:
+          id: led
+          brightness: 20%
+          red: 0%
+          green: 0%
+          blue: 100%
+
+interval:
+  - interval: 5s
+    then:
+      - if:
+          condition:
+            not:
+              - mqtt.connected:
+              - wifi.connected:
+          then:
+            - light.turn_on:
+                id: led
+                brightness: 100%
+                red: 100%
+                green: 0%
+                blue: 0%
 
 wifi:
   ssid: !secret wifi_ssid
@@ -18,6 +42,7 @@ captive_portal:
 logger:
   logs:
     esp32_ble_tracker: info
+    light: info
     sensor: info
     xiaomi_ble: info
 
@@ -37,6 +62,22 @@ mqtt:
 prometheus:
 
 esp32_ble_tracker:
+  on_ble_advertise:
+    - mac_address: 'C4:7C:8D:6A:4C:BF'
+      then:
+        - script.execute: blink_led_green
+    - mac_address: 'C4:7C:8D:6A:A8:58'
+      then:
+        - script.execute: blink_led_green
+    - mac_address: 'C4:7C:8D:6A:B2:76'
+      then:
+        - script.execute: blink_led_green
+    - mac_address: 'C4:7C:8D:6A:B3:CF'
+      then:
+        - script.execute: blink_led_green
+    - mac_address: 'C4:7C:8D:6A:B4:1B'
+      then:
+        - script.execute: blink_led_green
 
 sensor:
   - platform: xiaomi_hhccjcy01
@@ -82,3 +123,25 @@ sensor:
       name: "Geranium - Illuminance"
     conductivity:
       name: "Geranium - Soil Conductivity"
+
+light:
+  - id: led
+    name: "Led"
+    platform: fastled_clockless
+    chipset: SK6812
+    pin: GPIO27
+    num_leds: 1
+    rgb_order: GRB
+    restore_mode: RESTORE_DEFAULT_OFF
+
+script:
+  - id: blink_led_green
+    then:
+      - light.turn_on:
+          id: led
+          brightness: 20%
+          red: 0%
+          green: 100%
+          blue: 0%
+      - delay: 0.5s
+      - light.turn_off: led
