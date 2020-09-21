@@ -1,11 +1,5 @@
-.*.sw?
-.HA_VERSION
-.config_entries.json
-.ios.conf
-.uuid
-__pycache__
-deps
-entity_registry.yaml
 home-assistant.log
-home-assistant_v2.db*
-nest.conf
+home-assistant_v2.db
+secrets.yaml
+.storage
+.*.sw?

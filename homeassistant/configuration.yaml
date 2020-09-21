@@ -1,60 +1,56 @@
-homeassistant:
-  # Name of the location where Home Assistant is running
-  name: Campederiva
-  # Location required to calculate the time the sun rises and sets
-  latitude: !secret homeassistant_latitude
-  longitude: !secret homeassistant_longitude
-  # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: !secret homeassistant_elevation
-  # metric for Metric, imperial for Imperial
-  unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time_zone: Europe/London
-  # Customization file
-  customize: !include customize.yaml
-  packages: !include_dir_named packages
 
-# Checks for available updates
-# Note: This component will send some information about your system to
-# the developers to assist with development of Home Assistant.
-# For more information, please see:
-# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
-updater:
-  # Optional, allows Home Assistant developers to focus on popular components.
-  # include_used_components: true
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
 
-# Discover some devices automatically
-discovery:
+# Text to speech
+tts:
+  - platform: google_translate
 
-# Enables the frontend
-frontend:
-
-ios:
-
-automation: !include automations.yaml
 group: !include groups.yaml
-input_boolean: !include input_boolean.yaml
-input_select: !include input_select.yaml
-scene: !include scenes.yaml
-# sensor: !include_dir_merge_list sensors
+automation: !include automations.yaml
 script: !include scripts.yaml
-zone: !include zones.yaml
-
-logger:
-  default: warning
-  logs:
-    # Useful information e.g. during boot
-    homeassistant.loader: info
-    homeassistant.setup: info
-
-    # Very noisy
-    homeassistant.core: warning
-    homeassistant.components.http: warning
-
-light:
-  - platform: hue
-    host: 192.168.30.14
+scene: !include scenes.yaml
 
 binary_sensor:
   - platform: workday
     country: UK
+
+plant:
+  basil:
+    sensors:
+      moisture: sensor.basil_moisture
+      temperature: sensor.basil_temperature
+      conductivity: sensor.basil_soil_conductivity
+      brightness: sensor.basil_illuminance
+  cactus:
+    sensors:
+      moisture: sensor.cactus_moisture
+      temperature: sensor.cactus_temperature
+      conductivity: sensor.cactus_soil_conductivity
+      brightness: sensor.cactus_illuminance
+  cilantro:
+    sensors:
+      moisture: sensor.cilantro_moisture
+      temperature: sensor.cilantro_temperature
+      conductivity: sensor.cilantro_soil_conductivity
+      brightness: sensor.cilantro_illuminance
+  geranium:
+    sensors:
+      moisture: sensor.geranium_moisture
+      temperature: sensor.geranium_temperature
+      conductivity: sensor.geranium_soil_conductivity
+      brightness: sensor.geranium_illuminance
+  palm:
+    sensors:
+      moisture: sensor.palm_moisture
+      temperature: sensor.palm_temperature
+      conductivity: sensor.palm_soil_conductivity
+      brightness: sensor.palm_illuminance
+
+sensor:
+  - platform: london_air
+    locations:
+      - City of London
+      - Hackney
+      - Islington
+      - Tower Hamlets

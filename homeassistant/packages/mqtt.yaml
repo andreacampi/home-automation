@@ -1,3 +1,0 @@
-mqtt_eventstream:
-  publish_topic: master/topic
-  subscribe_topic: slaves/#
