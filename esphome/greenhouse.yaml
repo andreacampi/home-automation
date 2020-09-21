@@ -65,19 +65,44 @@ esp32_ble_tracker:
   on_ble_advertise:
     - mac_address: 'C4:7C:8D:6A:4C:BF'
       then:
-        - script.execute: blink_led_green
+        - if:
+            condition:
+              not:
+                - script.is_running: blink_led_green
+            then:
+              - script.execute: blink_led_green
     - mac_address: 'C4:7C:8D:6A:A8:58'
       then:
-        - script.execute: blink_led_green
+        - if:
+            condition:
+              not:
+                - script.is_running: blink_led_green
+            then:
+              - script.execute: blink_led_green
     - mac_address: 'C4:7C:8D:6A:B2:76'
       then:
-        - script.execute: blink_led_green
+        - if:
+            condition:
+              not:
+                - script.is_running: blink_led_green
+            then:
+              - script.execute: blink_led_green
     - mac_address: 'C4:7C:8D:6A:B3:CF'
       then:
-        - script.execute: blink_led_green
+        - if:
+            condition:
+              not:
+                - script.is_running: blink_led_green
+            then:
+              - script.execute: blink_led_green
     - mac_address: 'C4:7C:8D:6A:B4:1B'
       then:
-        - script.execute: blink_led_green
+        - if:
+            condition:
+              not:
+                - script.is_running: blink_led_green
+            then:
+              - script.execute: blink_led_green
 
 sensor:
   - platform: xiaomi_hhccjcy01
