@@ -1,0 +1,24 @@
+#! /bin/sh
+
+set -euo pipefail
+
+from='/volume1/docker/homeassistant/config'
+files='.gitignore .HA_VERSION automations.yaml configuration.yaml groups.yaml scenes.yaml scripts.yaml secrets.yaml'
+dirs='.cloud tts'
+
+clean=$(git status -s | wc -l)
+if [ $clean -gt 0 ]; then
+	echo Repo is not clean
+	exit 1
+fi
+
+for f in ${files}
+do
+	cp ${from}/${f} .
+done
+
+for d in ${dirs}
+do
+    [ -d $d ] || mkdir $d
+    cp -pr ${from}/${d} ${d}
+done
