@@ -9,7 +9,7 @@ This repo contains configurations and other bits for my home automation setup.
   * running on a [Synology DS218+](https://www.synology.com/en-uk/products/DS218) NAS
   * installed [directly](https://gist.github.com/ajumalp/0ad2517d15c999cfc440cdf3d623fab8). TODO move to Docker
 * [Home Assistant](https://www.home-assistant.io) configuration files in the homeassistant subdirectory:
-  * currently out of order, config may or may not be broken
+  * running on a [Synology DS218+](https://www.synology.com/en-uk/products/DS218) NAS (see the [documentation](https://www.home-assistant.io/docs/installation/docker/#synology-nas) for how to run in Docker).
 * Prometheus / Grafana stack in the homeassistant subdirectory:
   * installed via [synology-prometheus](https://github.com/prahaladramji/synology-prometheus)
 
