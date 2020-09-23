@@ -22,6 +22,12 @@ plant:
       temperature: sensor.basil_temperature
       conductivity: sensor.basil_soil_conductivity
       brightness: sensor.basil_illuminance
+  borrage:
+    sensors:
+      moisture: sensor.borrage_moisture
+      temperature: sensor.borrage_temperature
+      conductivity: sensor.borrage_soil_conductivity
+      brightness: sensor.borrage_illuminance
   cactus:
     sensors:
       moisture: sensor.cactus_moisture
@@ -34,12 +40,6 @@ plant:
       temperature: sensor.cilantro_temperature
       conductivity: sensor.cilantro_soil_conductivity
       brightness: sensor.cilantro_illuminance
-  geranium:
-    sensors:
-      moisture: sensor.geranium_moisture
-      temperature: sensor.geranium_temperature
-      conductivity: sensor.geranium_soil_conductivity
-      brightness: sensor.geranium_illuminance
   palm:
     sensors:
       moisture: sensor.palm_moisture
