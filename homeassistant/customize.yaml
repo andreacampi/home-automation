@@ -1,7 +1,0 @@
-#
-# Hide Hue groups
-#
-light.bedroom_ceiling:
-  hidden: true
-light.kids_bedroom_ceiling:
-  hidden: true
