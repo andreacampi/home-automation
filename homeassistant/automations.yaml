@@ -1,1 +1,58 @@
-[]
+- id: '1600897077572'
+  alias: Turn on Andrea light on switch press
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: bedroom/binary_sensor/andrea_touchpad/state
+    payload: 'ON'
+  condition: []
+  action:
+  - type: toggle
+    device_id: ecc56076fc1711ea90bd995e3a1400a7
+    entity_id: light.andrea
+    domain: light
+  mode: single
+- id: '1600897936269'
+  alias: Turn on Marta light on switch press
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: bedroom/binary_sensor/marta_touchpad/state
+    payload: 'ON'
+  condition: []
+  action:
+  - type: toggle
+    device_id: ecc43964fc1711eab64f3bdc62a4d590
+    entity_id: light.marta
+    domain: light
+  mode: single
+- id: '1600898255154'
+  alias: Turn off Andrea switch light on light off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: light.andrea
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: mqtt.publish
+    data:
+      topic: bedroom/switch/andrea_light/command
+      payload: 'OFF'
+  mode: single
+- id: '1600899972543'
+  alias: Turn on Andrea switch light on light on
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: light.andrea
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: mqtt.publish
+    data:
+      topic: bedroom/switch/andrea_light/command
+      payload: 'ON'
+  mode: single
