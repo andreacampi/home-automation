@@ -46,10 +46,6 @@ logger:
     sensor: info
     xiaomi_ble: info
 
-# Enable Home Assistant API
-#api:
-#  password: !secret api_password
-
 ota:
   password: !secret ota_password
 
@@ -108,13 +104,13 @@ sensor:
   - platform: xiaomi_hhccjcy01
     mac_address: 'C4:7C:8D:6A:4C:BF'
     temperature:
-      name: "Geranium - Temperature"
+      name: "Borrage - Temperature"
     moisture:
-      name: "Geranium - Moisture"
+      name: "Borrage - Moisture"
     illuminance:
-      name: "Geranium - Illuminance"
+      name: "Borrage - Illuminance"
     conductivity:
-      name: "Geranium - Soil Conductivity"
+      name: "Borrage - Soil Conductivity"
 
   - platform: xiaomi_hhccjcy01
     mac_address: 'C4:7C:8D:6A:A8:58'
