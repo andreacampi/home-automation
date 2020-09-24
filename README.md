@@ -12,20 +12,3 @@ This repo contains configurations and other bits for my home automation setup.
   * running on a [Synology DS218+](https://www.synology.com/en-uk/products/DS218) NAS (see the [documentation](https://www.home-assistant.io/docs/installation/docker/#synology-nas) for how to run in Docker).
 * Prometheus / Grafana stack in the homeassistant subdirectory:
   * installed via [synology-prometheus](https://github.com/prahaladramji/synology-prometheus)
-
-# Home Assistant upgrade
-
-I am currently migrating from an older setup to a new one based on the entities registry. Things left to do:
-
-* migrate old:
-  * Scenes and Automations (especially Alarm Clock)
-  * mobile phones / tablets / zones / OwnTracks / presence
-  * Notifications
-* new functionality:
-  * Apple TV
-  * Presence
-  * Ubiquiti
-  * Foursquare
-  * HomeKit
-  * IPP Printer
-  * TTS
