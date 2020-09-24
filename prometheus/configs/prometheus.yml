@@ -32,6 +32,10 @@ scrape_configs:
     static_configs:
       - targets: ['node-exporter:9100']
 
+  - job_name: 'bedroom'
+    static_configs:
+      - targets: ['192.168.30.235:80']
+
   - job_name: 'greenhouse'
     static_configs:
       - targets: ['192.168.30.90:80']
