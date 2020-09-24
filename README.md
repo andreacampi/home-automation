@@ -18,25 +18,14 @@ This repo contains configurations and other bits for my home automation setup.
 I am currently migrating from an older setup to a new one based on the entities registry. Things left to do:
 
 * migrate old:
-  * Nest
   * Scenes and Automations (especially Alarm Clock)
   * mobile phones / tablets / zones / OwnTracks / presence
   * Notifications
-  * TLS
-  * rotate credentials
-  * log to MySQL
 * new functionality:
-  * set up plants
-  * Verisure (Securitas)
-  * Prometheus
-  * Alexa
-  * lights in plugs
   * Apple TV
-  * LG webOS Smart TV
   * Presence
   * Ubiquiti
   * Foursquare
   * HomeKit
-  * Neato
   * IPP Printer
   * TTS
