@@ -30,6 +30,7 @@ interval:
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
+  use_address: !secret greenhouse_ip_address
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
