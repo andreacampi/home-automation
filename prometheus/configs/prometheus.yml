@@ -33,9 +33,26 @@ scrape_configs:
       - targets: ['node-exporter:9100']
 
   - job_name: 'bedroom'
+    scrape_interval: 60s
     static_configs:
       - targets: ['192.168.30.235:80']
 
   - job_name: 'greenhouse'
+    scrape_interval: 60s
     static_configs:
       - targets: ['192.168.30.90:80']
+
+  - job_name: 'livingroom'
+    scrape_interval: 60s
+    static_configs:
+      - targets: ['192.168.30.243:80']
+
+  - job_name: 'homeassistant'
+    scrape_interval: 60s
+    metrics_path: /api/prometheus
+
+    # Long-Lived Access Token
+    bearer_token_file: bearer_token_file
+
+    static_configs:
+      - targets: ['192.168.2.2:8123']

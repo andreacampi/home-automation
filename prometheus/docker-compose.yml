@@ -24,6 +24,7 @@ services:
       - "9090:9090"
     volumes:
       - /volume1/docker/prometheus/configs/prometheus.yml:/etc/prometheus/prometheus.yml
+      - /volume1/docker/prometheus/configs/bearer_token_file:/etc/prometheus/bearer_token_file
       - /volume1/docker/prometheus/data/prometheus:/prometheus
 
   alertmanager:
