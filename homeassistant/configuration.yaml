@@ -2,6 +2,8 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
+prometheus:
+
 # Text to speech
 tts:
   - platform: google_translate
