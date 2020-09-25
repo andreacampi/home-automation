@@ -34,36 +34,33 @@ binary_sensor:
       number: GPIO0
       mode: INPUT_PULLUP
       inverted: True
-    name: "Andrea Touchpad"
+    name: "Andrea touchpad"
   - platform: gpio
     pin:
       number: GPIO9
       mode: INPUT_PULLUP
       inverted: True
-    name: "Marta Touchpad"
+    name: "Marta touchpad"
   - platform: gpio
     pin:
       number: GPIO10
       mode: INPUT_PULLUP
       inverted: True
-    name: "Bedroom Ceiling Touchpad"
+    name: "Bedroom ceiling touchpad"
     on_press:
       - then:
-        - switch.toggle: relay_3
+        - switch.toggle: ceiling_relay
   - platform: status
-    name: "Bedroom Gang Status"
+    name: "Bedroom gang status"
 
 switch:
+  # Relay 1-2 unused
+  #- platform: gpio
+  #  pin: GPIO12
+  #- platform: gpio
+  #  pin: GPIO5
   - platform: gpio
-    id: andrea
-    name: "Andrea light"
-    pin: GPIO12
-  - platform: gpio
-    id: relay_2
-    name: "Marta light"
-    pin: GPIO5
-  - platform: gpio
-    id: relay_3
+    id: ceiling_relay
     name: "Bedroom ceiling"
     pin: GPIO4
 
@@ -77,5 +74,5 @@ output:
 light:
   # ... and then make a light out of it.
   - platform: monochromatic
-    name: "Bedroom Led"
+    name: "Bedroom led"
     output: blue_led

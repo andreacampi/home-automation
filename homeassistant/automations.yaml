@@ -1,5 +1,5 @@
 - id: '1600897077572'
-  alias: Turn on Andrea light on switch press
+  alias: 'Andrea light: turn on when switch is pressed'
   description: ''
   trigger:
   - platform: mqtt
@@ -13,7 +13,7 @@
     domain: light
   mode: single
 - id: '1600897936269'
-  alias: Turn on Marta light on switch press
+  alias: 'Marta light: turn on when switch is pressed'
   description: ''
   trigger:
   - platform: mqtt
@@ -27,7 +27,7 @@
     domain: light
   mode: single
 - id: '1600898255154'
-  alias: Turn off Andrea switch light on light off
+  alias: 'Andrea switch light: turn off when Andrea light goes off'
   description: ''
   trigger:
   - platform: state
@@ -42,7 +42,7 @@
       payload: 'OFF'
   mode: single
 - id: '1600899972543'
-  alias: Turn on Andrea switch light on light on
+  alias: 'Andrea switch light: turn on when Andrea light goes on'
   description: ''
   trigger:
   - platform: state
@@ -55,4 +55,64 @@
     data:
       topic: bedroom/switch/andrea_light/command
       payload: 'ON'
+  mode: single
+- id: '1601021835492'
+  alias: 'Marta switch light: turn on when Marta light goes on'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: light.marta
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: mqtt.publish
+    data:
+      topic: bedroom/switch/marta_light/command
+      payload: 'ON'
+  mode: single
+- id: '1601021887611'
+  alias: 'Marta switch light: turn off when Marta light goes off'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: light.marta
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: mqtt.publish
+    data:
+      topic: bedroom/switch/marta_light/command
+      payload: 'OFF'
+  mode: single
+- id: '1601022116689'
+  alias: 'Bedroom ceiling switch light: turn on when Bedroom light goes on'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: light.bedroom
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: mqtt.publish
+    data:
+      topic: bedroom/switch/bedroom_ceiling/command
+      payload: 'ON'
+  mode: single
+- id: '1601022149132'
+  alias: 'Bedroom ceiling switch light: turn off when Bedroom light goes off'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: light.bedroom
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: mqtt.publish
+    data:
+      topic: bedroom/switch/bedroom_ceiling/command
+      payload: 'OFF'
   mode: single
