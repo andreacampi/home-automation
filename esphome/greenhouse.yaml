@@ -157,6 +157,15 @@ sensor:
     conductivity:
       name: "Cilantro - Soil Conductivity"
 
+  - platform: xiaomi_lywsdcgq
+    mac_address: '58:2D:34:3B:53:34'
+    temperature:
+      name: "Fridge Temperature"
+    humidity:
+      name: "Fridge Humidity"
+    battery_level:
+      name: "Fridge Battery Level"
+
 light:
   - id: led
     name: "Led"
