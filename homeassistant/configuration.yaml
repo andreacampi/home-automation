@@ -65,3 +65,33 @@ light:
       - light.bedroom_near_closet
       - light.bedroom_near_marta
       - light.bedroom_near_window
+
+  - platform: group
+    name: Kitchen Ceiling
+    entities:
+      - light.kitchen_door
+      - light.kitchen_fridge
+      - light.kitchen_hob
+      - light.kitchen_sink
+
+  - platform: group
+    name: Kids Bedroom Ceiling
+    entities:
+      - light.kids_near_closet
+      - light.kids_near_davide
+      - light.kids_near_door
+      - light.kids_near_window
+
+  - platform: group
+    name: Living Room Ceiling
+    entities:
+      - light.living_room_door
+      - light.living_room_sofa
+      - light.living_room_terrace
+      - light.living_room_window
+
+  - platform: group
+    name: Office Ceiling
+    entities:
+      - light.office_near_door
+      - light.office_near_window
