@@ -39,17 +39,29 @@
     data: {}
     entity_id: light.bedroom_ceiling
   mode: single
-- id: '1601240301803'
+- id: '1601240859911'
   alias: 'Kitchen ceiling light: toggle when switch is pressed'
   description: ''
   trigger:
   - platform: mqtt
-    topic: livingroom/binary_sensor/kitchen_touchpad/state
+    topic: livingroom/binary_sensor/kitchen_ceiling_touchpad/state
     payload: 'ON'
   condition: []
   action:
-  - type: toggle
-    device_id: ecc69650fc1711eaa435978d7517c72f
-    entity_id: light.kitchen_door
-    domain: light
+  - service: light.toggle
+    data: {}
+    entity_id: light.kitchen_ceiling
+  mode: single
+- id: '1601240909343'
+  alias: 'Living room ceiling light: toggle when switch is pressed'
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: livingroom/binary_sensor/living_room_ceiling_touchpad/state
+    payload: 'ON'
+  condition: []
+  action:
+  - service: light.toggle
+    data: {}
+    entity_id: light.living_room_ceiling
   mode: single
