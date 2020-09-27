@@ -56,3 +56,12 @@ sensor:
       - Hackney
       - Islington
       - Tower Hamlets
+
+light:
+  - platform: group
+    name: Bedroom Ceiling
+    entities:
+      - light.bedroom_near_andrea
+      - light.bedroom_near_closet
+      - light.bedroom_near_marta
+      - light.bedroom_near_window

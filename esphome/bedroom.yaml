@@ -47,22 +47,22 @@ binary_sensor:
       mode: INPUT_PULLUP
       inverted: True
     name: "Bedroom ceiling touchpad"
-    on_press:
-      - then:
-        - switch.toggle: ceiling_relay
   - platform: status
     name: "Bedroom gang status"
 
 switch:
-  # Relay 1-2 unused
-  #- platform: gpio
-  #  pin: GPIO12
-  #- platform: gpio
-  #  pin: GPIO5
   - platform: gpio
-    id: ceiling_relay
-    name: "Bedroom ceiling"
+    name: "Andrea gang led"
+    pin: GPIO12
+    restore_mode: RESTORE_DEFAULT_ON
+  - platform: gpio
+    name: "Marta gang led"
+    pin: GPIO5
+    restore_mode: RESTORE_DEFAULT_ON
+  - platform: gpio
+    name: "Bedroom ceiling relay"
     pin: GPIO4
+    restore_mode: RESTORE_DEFAULT_ON
 
 output:
   # Register the blue LED as a dimmable output ....
