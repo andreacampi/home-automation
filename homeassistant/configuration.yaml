@@ -60,6 +60,12 @@ sensor:
       - Islington
       - Tower Hamlets
 
+tplink:
+  discovery: false
+  switch:
+    - host: 192.168.30.245
+    - host: 192.168.30.246
+
 light:
   - platform: group
     name: Bedroom Ceiling
@@ -98,3 +104,11 @@ light:
     entities:
       - light.office_near_door
       - light.office_near_window
+
+  - platform: switch
+    name: Fairy Lights
+    entity_id: switch.fairy_lights
+
+  - platform: switch
+    name: Living Room Lamp
+    entity_id: switch.living_room_lamp
