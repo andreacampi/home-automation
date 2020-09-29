@@ -42,6 +42,40 @@ scrape_configs:
     static_configs:
       - targets: ['192.168.30.90:80']
 
+    metric_relabel_configs:
+      # esphome_sensor_value for Xiaomi Flora sensors
+      - source_labels: ["name"]
+        regex: '(.*) - (Illuminance|Moisture|Temperature)'
+        replacement: '$1'
+        target_label: target
+      - source_labels: ["name"]
+        regex: '(.*) - (Illuminance|Moisture|Temperature)'
+        replacement: 'Plant'
+        target_label: kind
+      - source_labels: ["name"]
+        regex: '(.*) - (Illuminance|Moisture|Temperature)'
+        replacement: '$2'
+        target_label: metric
+
+      # esphome_sensor_value for Xiaomi temperature sensor
+      - source_labels: ["name"]
+        regex: '(Fridge) (.*)'
+        replacement: '$1'
+        target_label: target
+      - source_labels: ["name"]
+        regex: '(Fridge) (.*)'
+        replacement: 'Fridge'
+        target_label: kind
+      - source_labels: ["name"]
+        regex: '(Fridge) (.*)'
+        replacement: '$2'
+        target_label: metric
+      - source_labels: ["name"]
+        regex: '(Fridge) (.*)'
+        replacement: 'Shelf 1 Left'
+        target_label: location
+
+
   - job_name: 'livingroom'
     scrape_interval: 60s
     static_configs:
