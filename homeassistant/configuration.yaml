@@ -4,6 +4,9 @@ default_config:
 
 prometheus:
 
+recorder:
+  db_url: !secret recorder_db_url
+
 # Text to speech
 tts:
   - platform: google_translate
