@@ -1,5 +1,8 @@
 home-assistant.log
 home-assistant_v2.db
+image
 secrets.yaml
+tts
+webostv.conf
 .storage
 .*.sw?

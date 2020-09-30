@@ -112,3 +112,10 @@ light:
   - platform: switch
     name: Living Room Lamp
     entity_id: switch.living_room_lamp
+
+webostv:
+  host: 192.168.30.22
+
+media_player:
+
+notify:
