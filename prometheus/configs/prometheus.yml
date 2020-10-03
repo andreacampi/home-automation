@@ -72,7 +72,7 @@ scrape_configs:
         target_label: metric
       - source_labels: ["name"]
         regex: '(Fridge) (.*)'
-        replacement: 'Shelf 1 Left'
+        replacement: 'Shelf 1 Right'
         target_label: location
 
 
