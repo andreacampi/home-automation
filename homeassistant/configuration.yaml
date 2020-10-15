@@ -122,3 +122,7 @@ webostv:
 media_player:
 
 notify:
+
+foursquare:
+  access_token: !secret foursquare_access_token
+  push_secret: !secret foursquare_push_secret
