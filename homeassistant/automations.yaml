@@ -65,3 +65,19 @@
     data: {}
     entity_id: light.living_room_ceiling
   mode: single
+- id: '1602750703128'
+  alias: Too hot in the fridge
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.fridge_temperature
+    below: '10'
+  condition: []
+  action:
+  - service: notify.mobile_app_andrea
+    data:
+      message: Fridge is too warm
+  - service: persistent_notification.create
+    data:
+      message: Fridge is too warm
+  mode: single
