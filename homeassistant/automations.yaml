@@ -65,3 +65,20 @@
     data: {}
     entity_id: light.living_room_ceiling
   mode: single
+- id: '1602750554947'
+  alias: Reminder to cover lamb's lettuce
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: weather.campederiva
+    attribute: temperature
+    below: '9'
+  condition: []
+  action:
+  - service: persistent_notification.create
+    data:
+      message: Cover the lamb's lettuce
+  - service: notify.mobile_app_andrea
+    data:
+      message: Cover lamb's lettuce
+  mode: single
