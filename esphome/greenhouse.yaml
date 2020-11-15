@@ -116,13 +116,13 @@ sensor:
   - platform: xiaomi_hhccjcy01
     mac_address: 'C4:7C:8D:6A:A8:58'
     temperature:
-      name: "Basil - Temperature"
+      name: "Strawberries - Temperature"
     moisture:
-      name: "Basil - Moisture"
+      name: "Strawberries - Moisture"
     illuminance:
-      name: "Basil - Illuminance"
+      name: "Strawberries - Illuminance"
     conductivity:
-      name: "Basil - Soil Conductivity"
+      name: "Strawberries - Soil Conductivity"
 
   - platform: xiaomi_hhccjcy01
     mac_address: 'C4:7C:8D:6A:B2:76'
@@ -149,13 +149,13 @@ sensor:
   - platform: xiaomi_hhccjcy01
     mac_address: 'C4:7C:8D:6A:B4:1B'
     temperature:
-      name: "Cilantro - Temperature"
+      name: "Parsley - Temperature"
     moisture:
-      name: "Cilantro - Moisture"
+      name: "Parsley - Moisture"
     illuminance:
-      name: "Cilantro - Illuminance"
+      name: "Parsley - Illuminance"
     conductivity:
-      name: "Cilantro - Soil Conductivity"
+      name: "Parsley - Soil Conductivity"
 
   - platform: xiaomi_lywsdcgq
     mac_address: '58:2D:34:3B:53:34'
