@@ -105,13 +105,13 @@ sensor:
   - platform: xiaomi_hhccjcy01
     mac_address: 'C4:7C:8D:6A:4C:BF'
     temperature:
-      name: "Lambs Lettuce - Temperature"
+      name: "Parsley - Temperature"
     moisture:
-      name: "Lambs Lettuce - Moisture"
+      name: "Parsley - Moisture"
     illuminance:
-      name: "Lambs Lettuce - Illuminance"
+      name: "Parsley - Illuminance"
     conductivity:
-      name: "Lambs Lettuce - Soil Conductivity"
+      name: "Parsley - Soil Conductivity"
 
   - platform: xiaomi_hhccjcy01
     mac_address: 'C4:7C:8D:6A:A8:58'
@@ -138,24 +138,24 @@ sensor:
   - platform: xiaomi_hhccjcy01
     mac_address: 'C4:7C:8D:6A:B3:CF'
     temperature:
-      name: "Lettuce - Temperature"
+      name: "Peppers - Temperature"
     moisture:
-      name: "Lettuce - Moisture"
+      name: "Peppers - Moisture"
     illuminance:
-      name: "Lettuce - Illuminance"
+      name: "Peppers - Illuminance"
     conductivity:
-      name: "Lettuce - Soil Conductivity"
+      name: "Peppers - Soil Conductivity"
 
   - platform: xiaomi_hhccjcy01
     mac_address: 'C4:7C:8D:6A:B4:1B'
     temperature:
-      name: "Parsley - Temperature"
+      name: "Tomato - Temperature"
     moisture:
-      name: "Parsley - Moisture"
+      name: "Tomato - Moisture"
     illuminance:
-      name: "Parsley - Illuminance"
+      name: "Tomato - Illuminance"
     conductivity:
-      name: "Parsley - Soil Conductivity"
+      name: "Tomato - Soil Conductivity"
 
   - platform: xiaomi_lywsdcgq
     mac_address: '58:2D:34:3B:53:34'
