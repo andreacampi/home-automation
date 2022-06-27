@@ -30,30 +30,30 @@ plant:
       temperature: sensor.basil_temperature
       conductivity: sensor.basil_soil_conductivity
       brightness: sensor.basil_illuminance
-  borrage:
-    sensors:
-      moisture: sensor.borrage_moisture
-      temperature: sensor.borrage_temperature
-      conductivity: sensor.borrage_soil_conductivity
-      brightness: sensor.borrage_illuminance
-  cactus:
-    sensors:
-      moisture: sensor.cactus_moisture
-      temperature: sensor.cactus_temperature
-      conductivity: sensor.cactus_soil_conductivity
-      brightness: sensor.cactus_illuminance
-  cilantro:
-    sensors:
-      moisture: sensor.cilantro_moisture
-      temperature: sensor.cilantro_temperature
-      conductivity: sensor.cilantro_soil_conductivity
-      brightness: sensor.cilantro_illuminance
   palm:
     sensors:
       moisture: sensor.palm_moisture
       temperature: sensor.palm_temperature
       conductivity: sensor.palm_soil_conductivity
       brightness: sensor.palm_illuminance
+  parsley:
+    sensors:
+      moisture: sensor.parsley_moisture
+      temperature: sensor.parsley_temperature
+      conductivity: sensor.parsley_soil_conductivity
+      brightness: sensor.parsley_illuminance
+  scotch_bonnets:
+    sensors:
+      moisture: sensor.scotch_bonnets_moisture
+      temperature: sensor.scotch_bonnets_temperature
+      conductivity: sensor.scotch_bonnets_soil_conductivity
+      brightness: sensor.scotch_bonnets_illuminance
+  strawberries:
+    sensors:
+      moisture: sensor.strawberries_moisture
+      temperature: sensor.strawberries_temperature
+      conductivity: sensor.strawberries_soil_conductivity
+      brightness: sensor.strawberries_illuminance
 
 sensor:
   - platform: london_air
@@ -122,6 +122,10 @@ webostv:
 media_player:
 
 notify:
+
+emulated_hue:
+  listen_port: 8080
+  expose_by_default: false
 
 foursquare:
   access_token: !secret foursquare_access_token

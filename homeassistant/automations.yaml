@@ -65,6 +65,51 @@
     data: {}
     entity_id: light.living_room_ceiling
   mode: single
+- id: '1601901374236'
+  alias: Marta left the Shrubbery
+  description: ''
+  trigger:
+  - platform: zone
+    entity_id: person.marta
+    zone: zone.shrubbery
+    event: leave
+  condition: []
+  action:
+  - service: notify.mobile_app_andrea
+    data:
+      message: Marta left the Shrubbery
+  mode: single
+- id: '1601901840006'
+  alias: Marta on the move
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: device_tracker.sm_g973f
+  condition: []
+  action:
+  - service: mqtt.publish
+    data:
+      topic: test
+      payload: Marta just changed from {{ trigger.from_state.state }} to {{ trigger.to_state.state
+        }}
+  mode: single
+- id: '1602750554947'
+  alias: Reminder to cover lamb's lettuce
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: weather.campederiva
+    attribute: temperature
+    below: '9'
+  condition: []
+  action:
+  - service: persistent_notification.create
+    data:
+      message: Cover the lamb's lettuce
+  - service: notify.mobile_app_andrea
+    data:
+      message: Cover lamb's lettuce
+  mode: single
 - id: '1602750703128'
   alias: Too hot in the fridge
   description: ''
@@ -72,6 +117,7 @@
   - platform: numeric_state
     entity_id: sensor.fridge_temperature
     below: '10'
+    for: 05:00
   condition: []
   action:
   - service: notify.mobile_app_andrea
@@ -80,4 +126,31 @@
   - service: persistent_notification.create
     data:
       message: Fridge is too warm
+  mode: single
+- id: '1639936637284'
+  alias: 'Davide lightstrip: toggle on switch'
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: davide/binary_sensor/lightstrip_touchpad/state
+    payload: 'ON'
+  condition: []
+  action:
+  - type: toggle
+    device_id: ecc8a9f4fc1711eab9acc74229a3942c
+    entity_id: light.hue_lightstrip_plus_1
+    domain: light
+  mode: single
+- id: '1639936782548'
+  alias: 'Davide ceiling: toggle on switch press'
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: davide/binary_sensor/ceiling_touchpad/state
+    payload: 'ON'
+  condition: []
+  action:
+  - service: light.toggle
+    target:
+      entity_id: light.kids_bedroom_ceiling
   mode: single
